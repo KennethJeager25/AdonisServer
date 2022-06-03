@@ -54,7 +54,7 @@ export default class TemperaturasController {
             .then((r) => {
                 x = r.data.feeds
         });
-        response.ok({message:"Registrados correctamente",data:x})
+        response.ok({message:"Todos los datos",data:x})
 }
 
 }
