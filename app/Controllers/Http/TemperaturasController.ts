@@ -14,7 +14,7 @@ export default class TemperaturasController {
 
             w = await Temperatura.all()
     
-            await Database.rawQuery("DELETE FROM Temperaturas")
+            await Database.rawQuery("DELETE FROM temperaturas")
             await axios.get('https://thingspeak.com/channels/935349/field/1.json')
                 .then((r) => {
                     x = r.data.feeds
@@ -50,8 +50,6 @@ export default class TemperaturasController {
     async ShowTemperatura({response}) {
 
         var x
-
-        await Database.rawQuery("DELETE FROM Temperaturas")
         await axios.get('https://thingspeak.com/channels/935349/field/1.json')
             .then((r) => {
                 x = r.data.feeds
