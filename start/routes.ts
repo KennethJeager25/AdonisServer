@@ -33,3 +33,6 @@ Route.get('insertInfo','TemperaturasController.InsertAllDataSensor')
 Route.get('showInfo','TemperaturasController.MostrarInfo')
 Route.delete('deleteInfo','TemperaturasController.EliminarTodo')
 }).prefix('temp').middleware('auth');
+
+
+Route.get('showData','TemperaturasController.ShowTemperatura')
