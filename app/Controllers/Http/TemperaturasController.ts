@@ -24,7 +24,7 @@ export default class TemperaturasController {
             });
             response.ok({message:"Registrados correctamente"})
     }
-    
+
     async MostrarInfo({response}:HttpContextContract){
 
         try{
@@ -46,4 +46,17 @@ export default class TemperaturasController {
             response.badRequest({message:"No existen datos"})
         }
     }
+
+    async ShowTemperatura({response}) {
+
+        var x
+
+        await Database.rawQuery("DELETE FROM Temperaturas")
+        await axios.get('https://thingspeak.com/channels/935349/field/1.json')
+            .then((r) => {
+                x = r.data.feeds
+        });
+        response.ok({message:"Registrados correctamente",data:x})
+}
+
 }
