@@ -10,7 +10,6 @@ export default class TemperaturasController {
 
     async InsertAllDataSensor({response}) {
 
-        try{
             var x,w;
 
             w = await Temperatura.all()
@@ -24,11 +23,8 @@ export default class TemperaturasController {
                 Temperatura.createMany(w)
             });
             response.ok({message:"Registrados correctamente"})
-        }
-        catch(error){
-            response.badRequest({message:"Error al registrar"})
-        }
     }
+    
     async MostrarInfo({response}:HttpContextContract){
 
         try{
