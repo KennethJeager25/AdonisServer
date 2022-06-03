@@ -60,6 +60,6 @@ export default class TemperaturasController {
                 x = r.data.feeds
         });
         response.ok({message:"Todos los datos",data:x})
-}
+    }
 
 }
