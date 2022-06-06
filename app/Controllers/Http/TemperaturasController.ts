@@ -11,9 +11,7 @@ export default class TemperaturasController {
     async InsertAllDataSensor({response}) {
 
         try{
-            var x,w;
-
-            w = await Temperatura.all()
+            var x;
     
             await Database.rawQuery("DELETE FROM temperaturas")
             await axios.get('https://thingspeak.com/channels/935349/field/1.json')
@@ -21,7 +19,7 @@ export default class TemperaturasController {
                     x = r.data.feeds
                     Temperatura.createMany(x)
             }).catch((m)=>{
-                Temperatura.createMany(w)
+                response.badRequest({message:"no existen registros"})
             });
             response.ok({message:"Registrados correctamente"})
         }
