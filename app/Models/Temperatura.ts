@@ -5,10 +5,10 @@ export default class Temperatura extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @column({ isPrimary: true })
+  @column()
   public entry_id: number
 
-  @column({ isPrimary: true })
+  @column()
   public field1: string
 
   @column.dateTime({ autoCreate: true })
