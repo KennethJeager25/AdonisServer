@@ -61,14 +61,4 @@ export default class TemperaturasController {
         response.ok({message:"Todos los datos",data:x})
     }
 
-    async Showparametros({response}) {
-        var x,array;
-        await axios.get('https://thingspeak.com/channels/935349/field/1.json')
-            .then((r) => {
-                x = r.data.feeds
-        });
-        array = x;
-        response.ok({message:"Todos los datos",data:array})
-    }
-
 }
