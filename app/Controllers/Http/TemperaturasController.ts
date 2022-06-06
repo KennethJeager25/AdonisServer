@@ -24,7 +24,7 @@ export default class TemperaturasController {
             response.ok({message:"Registrados correctamente"})
         }
         catch(error){
-
+            response.badRequest({message:"no existen registros"})
         }
     }
 
