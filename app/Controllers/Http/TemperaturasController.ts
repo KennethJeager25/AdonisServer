@@ -2,6 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import axios from 'axios';
 import Temperatura from 'App/Models/Temperatura'
 import Database from '@ioc:Adonis/Lucid/Database';
+import databaseConfig from 'Config/database';
 /* import { Request } from '@adonisjs/core/build/standalone';
  var  axios =require('axios') */
 
@@ -58,6 +59,16 @@ export default class TemperaturasController {
                 x = r.data.feeds
         });
         response.ok({message:"Todos los datos",data:x})
+    }
+
+    async Showparametros({response}) {
+        var x,array;
+        await axios.get('https://thingspeak.com/channels/935349/field/1.json')
+            .then((r) => {
+                x = r.data.feeds
+        });
+        array = x;
+        response.ok({message:"Todos los datos",data:array})
     }
 
 }

@@ -36,3 +36,5 @@ Route.delete('deleteInfo','TemperaturasController.EliminarTodo')
 
 
 Route.get('showData','TemperaturasController.ShowTemperatura')
+
+Route.get('showfield1','TemperaturasController.Showparametros')
