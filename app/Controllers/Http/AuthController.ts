@@ -30,7 +30,7 @@ export default class AuthController {
            response.ok({message:"Registro Correcto", token:token})
         }
         catch(error){
-            response.badRequest({message:"El usuario ya existe"})
+            response.badRequest({message:"datos incorrectos"})
         }
     }
 

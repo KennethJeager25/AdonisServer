@@ -9,7 +9,7 @@ export default class HumiditiesController {
 
         var x;
 
-        try{
+
             await Database.rawQuery("DELETE FROM humidities")
             await axios.get('https://thingspeak.com/channels/935349/field/2.json')
             .then((r) => {
@@ -19,10 +19,6 @@ export default class HumiditiesController {
             });
             Humidity.createMany(x)
             response.ok({message:"Registrados correctamente",data:x})
-        }
-        catch(error){
-            response.badRequest({message:"no existen registros"})
-        }
     }
 
     async MostrarInfo({response}:HttpContextContract){
