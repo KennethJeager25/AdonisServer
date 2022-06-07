@@ -35,6 +35,14 @@ Route.delete('deleteInfo','TemperaturasController.EliminarTodo')
 }).prefix('temp').middleware('auth');
 
 
+Route.group(()=>{
+  Route.get('insertInfo','HumiditiesController.InsertarHumedad')
+  Route.get('showInfo','HumiditiesController.MostrarInfo')
+  Route.delete('deleteInfo','HumiditiesController.EliminarTodo')
+}).prefix('hum').middleware('auth');
+  
+
+
 Route.get('showData','TemperaturasController.ShowTemperatura')
 
 Route.get('showfield1','TemperaturasController.Showparametros')
