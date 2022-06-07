@@ -29,17 +29,17 @@ Route.post('registro','AuthController.registrar')
 
 
 Route.group(()=>{
-Route.get('insertInfo','TemperaturasController.InsertAllDataSensor')
+Route.post('insertInfo','TemperaturasController.InsertAllDataSensor')
 Route.get('showInfo','TemperaturasController.MostrarInfo')
 Route.delete('deleteInfo','TemperaturasController.EliminarTodo')
-}).prefix('temp').middleware('auth');
+}).prefix('temp');
 
 
 Route.group(()=>{
   Route.get('insertInfo','HumiditiesController.InsertarHumedad')
   Route.get('showInfo','HumiditiesController.MostrarInfo')
   Route.delete('deleteInfo','HumiditiesController.EliminarTodo')
-}).prefix('hum').middleware('auth');
+}).prefix('hum');
   
 
 

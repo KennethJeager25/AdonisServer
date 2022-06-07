@@ -6,6 +6,9 @@ export default class Temperatura extends BaseModel {
   public id: number
 
   @column()
+  public id_user: number
+
+  @column()
   public entry_id: number
 
   @column()
