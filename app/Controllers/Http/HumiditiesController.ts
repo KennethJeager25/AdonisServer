@@ -14,10 +14,10 @@ export default class HumiditiesController {
             await axios.get('https://thingspeak.com/channels/935349/field/2.json')
             .then((r) => {
                  x = r.data.feeds
-                Humidity.createMany(x)
             }).catch((m)=>{
                 response.badRequest({message:"no existen registros"})
             });
+            Humidity.createMany(x)
             response.ok({message:"Registrados correctamente",data:x})
         }
         catch(error){
